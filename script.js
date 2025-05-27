@@ -1,18 +1,16 @@
-window.onload = function () {
-  const squares = document.querySelectorAll('.square');
+const squares = document.querySelectorAll('.square');
 
-  squares.forEach((square, index) => {
-    square.addEventListener('mouseover', () => {
-      squares.forEach((otherSquare, i) => {
-        if (i !== index) {
-          otherSquare.classList.add('coffee');
-        }
-      });
-    });
-    square.addEventListener('mouseout', () => {
-      squares.forEach(sq => {
-        sq.classList.remove('coffee');
-      });
+squares.forEach((square) => {
+  square.addEventListener('mouseenter', () => {
+    squares.forEach((sq) => {
+      if (sq !== square) {
+        sq.style.backgroundColor = '#6F4E37';
+      }
     });
   });
-};
+  square.addEventListener('mouseleave', () => {
+    squares.forEach((sq) => {
+      sq.style.backgroundColor = '#E6E6FA';
+    });
+  });
+});
