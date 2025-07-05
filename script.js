@@ -4,7 +4,9 @@ squares.forEach((square) => {
   square.addEventListener('mouseenter', () => {
     squares.forEach((sq) => {
       if (sq !== square) {
-        sq.style.backgroundColor = '#6F4E37'; 
+        sq.style.backgroundColor = '#6F4E37';
+      } else {
+        sq.style.backgroundColor = '#E6E6FA'; 
       }
     });
   });
